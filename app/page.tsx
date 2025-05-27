@@ -384,7 +384,7 @@ export default function LawFirmLanding() {
       </div>
 
       {/* Header */}
-      <header className="relative z-50 px-4 md:px-6 py-3 md:py-4 border-b border-gray-200 backdrop-blur-xl bg-white/80">
+      <header className="sticky top-0 relative z-50 px-4 md:px-6 py-3 md:py-4 border-b border-gray-200 backdrop-blur-xl bg-white/80">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2 md:space-x-3">
             <Image
@@ -392,7 +392,7 @@ export default function LawFirmLanding() {
               alt="Skyewalker Law"
               width={180}
               height={40}
-              className="h-8 md:h-10 w-auto"
+              className="h-10 md:h-12 w-auto"
               priority
             />
           </div>
@@ -842,10 +842,9 @@ export default function LawFirmLanding() {
                   alt="Skyewalker Law"
                   width={200}
                   height={45}
-                  className="h-10 md:h-12 w-auto"
+                  className="h-12 md:h-14 w-auto"
                 />
               </div>
-              <p className="text-gray-600 text-sm">Where legal excellence meets human connection.</p>
             </div>
 
             <div className="space-y-4">
