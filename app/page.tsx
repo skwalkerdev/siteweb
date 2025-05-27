@@ -384,7 +384,7 @@ export default function LawFirmLanding() {
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 relative z-50 px-4 md:px-6 py-3 md:py-4 border-b border-gray-200 backdrop-blur-xl bg-white/80">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-3 md:py-4 border-b border-gray-200 backdrop-blur-xl bg-white/95">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2 md:space-x-3">
             <Image
@@ -453,7 +453,7 @@ export default function LawFirmLanding() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-16 md:pt-20 pb-24 md:pb-32 px-4 md:px-6">
+      <section className="relative z-10 pt-24 md:pt-28 pb-24 md:pb-32 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-6 md:space-y-8">
             <div className="space-y-4">
