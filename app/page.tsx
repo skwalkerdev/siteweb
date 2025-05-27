@@ -180,25 +180,25 @@ function CaseStudyCarousel() {
     <div className="relative">
       {/* Main Carousel */}
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 border border-gray-200">
-        <div className="p-8 md:p-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="p-6 md:p-8 lg:p-12">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Content */}
-            <div className="space-y-6">
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Badge variant="outline" className="border-blue-200 text-blue-700 bg-blue-50">
+            <div className="space-y-4 md:space-y-6">
+              <div className="space-y-2 md:space-y-3">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 md:gap-3">
+                  <Badge variant="outline" className="border-blue-200 text-blue-700 bg-blue-50 w-fit">
                     {currentCase.category}
                   </Badge>
                   <span className="text-sm text-gray-500">{currentCase.year}</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900">{currentCase.title}</h3>
-                <p className="text-lg text-blue-600 font-medium">{currentCase.subtitle}</p>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">{currentCase.title}</h3>
+                <p className="text-base md:text-lg text-blue-600 font-medium">{currentCase.subtitle}</p>
               </div>
 
-              <p className="text-gray-600 leading-relaxed text-lg">{currentCase.description}</p>
+              <p className="text-gray-600 leading-relaxed text-base md:text-lg">{currentCase.description}</p>
 
-              {/* Key Details */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Key Details - Stack on mobile */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 <div className="flex items-center gap-3 text-gray-600">
                   <MapPin className="h-5 w-5 text-blue-600" />
                   <span>{currentCase.location}</span>
@@ -231,14 +231,14 @@ function CaseStudyCarousel() {
               </div>
             </div>
 
-            {/* Value Display */}
+            {/* Value Display - Responsive sizing */}
             <div className="text-center lg:text-right">
-              <div className="inline-block p-8 rounded-2xl bg-white border border-gray-200 shadow-sm">
-                <div className="space-y-4">
-                  <div className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <div className="inline-block p-6 md:p-8 rounded-2xl bg-white border border-gray-200 shadow-sm w-full max-w-sm mx-auto lg:max-w-none">
+                <div className="space-y-3 md:space-y-4">
+                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     {currentCase.value}
                   </div>
-                  <div className="text-gray-600 font-medium">Transaction Value</div>
+                  <div className="text-gray-600 font-medium text-sm md:text-base">Transaction Value</div>
                   <div className="flex justify-center lg:justify-end">
                     <div className="flex items-center gap-1">
                       {[...Array(5)].map((_, i) => (
@@ -385,17 +385,17 @@ export default function LawFirmLanding() {
       </div>
 
       {/* Header */}
-      <header className="relative z-50 px-6 py-4 border-b border-gray-200 backdrop-blur-xl bg-white/80">
+      <header className="relative z-50 px-4 md:px-6 py-3 md:py-4 border-b border-gray-200 backdrop-blur-xl bg-white/80">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 md:space-x-3">
             <div className="relative">
-              <Scale className="h-8 w-8 text-gray-900" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse" />
+              <Scale className="h-6 w-6 md:h-8 md:w-8 text-gray-900" />
+              <div className="absolute -top-1 -right-1 w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-gray-900">SKYEWALKER LAW</span>
+            <span className="text-lg md:text-xl font-bold tracking-tight text-gray-900">SKYEWALKER LAW</span>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8">
             <Link href="#services" className="text-gray-600 hover:text-gray-900 transition-colors">
               Services
             </Link>
@@ -413,28 +413,54 @@ export default function LawFirmLanding() {
             </Link>
           </nav>
 
-          <div className="flex items-center space-x-4">
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+          <div className="flex items-center space-x-2 md:space-x-4">
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-sm md:text-base px-3 md:px-4 py-2 hidden sm:inline-flex">
               Start Our Partnership
             </Button>
-            <button className="md:hidden text-gray-900" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <button className="lg:hidden text-gray-900" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
             </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
+            <nav className="px-4 py-4 space-y-4">
+              <Link href="#services" className="block text-gray-600 hover:text-gray-900 transition-colors py-2">
+                Services
+              </Link>
+              <Link href="#tools" className="block text-gray-600 hover:text-gray-900 transition-colors py-2">
+                Expertise
+              </Link>
+              <Link href="#results" className="block text-gray-600 hover:text-gray-900 transition-colors py-2">
+                Results
+              </Link>
+              <Link href="#team" className="block text-gray-600 hover:text-gray-900 transition-colors py-2">
+                Team
+              </Link>
+              <Link href="#contact" className="block text-gray-600 hover:text-gray-900 transition-colors py-2">
+                Contact
+              </Link>
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full mt-4">
+                Start Our Partnership
+              </Button>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-32 px-6">
+      <section className="relative z-10 pt-16 md:pt-20 pb-24 md:pb-32 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-8">
+          <div className="text-center space-y-6 md:space-y-8">
             <div className="space-y-4">
               <Badge variant="outline" className="border-blue-200 text-blue-700 bg-blue-50">
                 <Zap className="h-3 w-3 mr-1" />
                 BLUE SKYE THINKING
               </Badge>
 
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 bg-clip-text text-transparent">
                   With Us, Law Meets
                 </span>
@@ -443,38 +469,38 @@ export default function LawFirmLanding() {
                   Human Connection
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
                 We don't just practice law—we build lasting partnerships. Behind every complex transaction is a human
                 story, and our blue SKYE thinking starts with understanding yours.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 py-6"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto"
               >
                 Start Our Partnership
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 hover:bg-gray-900 hover:text-white hover:border-gray-900 text-lg px-8 py-6"
+                className="border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 hover:bg-gray-900 hover:text-white hover:border-gray-900 text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto"
               >
                 Hear Client Stories
               </Button>
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pt-12 md:pt-16 px-4">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center space-y-2 group cursor-pointer">
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                <div key={index} className="text-center space-y-1 md:space-y-2 group cursor-pointer">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                     {stat.value}
                   </div>
-                  <div className="text-gray-900 font-medium">{stat.label}</div>
-                  <div className="text-sm text-gray-500">{stat.sublabel}</div>
+                  <div className="text-gray-900 font-medium text-sm md:text-base">{stat.label}</div>
+                  <div className="text-xs md:text-sm text-gray-500">{stat.sublabel}</div>
                 </div>
               ))}
             </div>
@@ -483,7 +509,7 @@ export default function LawFirmLanding() {
       </section>
 
       {/* Case Studies Section */}
-      <section id="results" className="relative z-10 py-24 px-6 bg-gray-50">
+      <section id="results" className="relative z-10 py-16 md:py-24 px-4 md:px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-16">
             <Badge variant="outline" className="border-purple-200 text-purple-700 bg-purple-50">
@@ -506,7 +532,7 @@ export default function LawFirmLanding() {
       </section>
 
       {/* Tech Arsenal Section */}
-      <section id="tools" className="relative z-10 py-24 px-6">
+      <section id="tools" className="relative z-10 py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-16">
             <Badge variant="outline" className="border-indigo-200 text-indigo-700 bg-indigo-50">
@@ -564,27 +590,27 @@ export default function LawFirmLanding() {
       </section>
 
       {/* Services Preview */}
-      <section id="services" className="relative z-10 py-24 px-6 bg-gray-50">
+      <section id="services" className="relative z-10 py-12 md:py-24 px-4 md:px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
               <div className="space-y-4">
                 <Badge variant="outline" className="border-emerald-200 text-emerald-700 bg-emerald-50">
                   <Gavel className="h-3 w-3 mr-1" />
                   Elite Legal Services
                 </Badge>
-                <h2 className="text-4xl md:text-5xl font-bold">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                   <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                     Redefining Legal Excellence
                   </span>
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                   We handle the impossible cases others won't touch. Our approach combines traditional legal mastery
                   with genuine understanding of what matters most to you.
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {[
                   "Cross-Border M&A & Corporate Finance",
                   "Distribution, Franchising & Licensing",
@@ -593,39 +619,63 @@ export default function LawFirmLanding() {
                 ].map((service, index) => (
                   <AnimatedIcon key={index} delay={index * 100}>
                     <div className="flex items-center space-x-3 text-gray-600 group cursor-pointer">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full group-hover:scale-150 transition-transform duration-200" />
-                      <span className="group-hover:text-gray-900 transition-colors duration-200">{service}</span>
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full group-hover:scale-150 transition-transform duration-200 flex-shrink-0" />
+                      <span className="group-hover:text-gray-900 transition-colors duration-200 text-sm md:text-base">
+                        {service}
+                      </span>
                     </div>
                   </AnimatedIcon>
                 ))}
               </div>
 
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full sm:w-auto">
                 Explore All Services
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
 
-            <div className="relative">
-              <div className="aspect-square rounded-2xl border border-gray-200 shadow-sm overflow-hidden relative">
-                {/* Video Background */}
-                <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+            <div className="relative order-1 lg:order-2">
+              <div className="aspect-square w-full max-w-md mx-auto lg:max-w-none rounded-2xl border border-gray-200 shadow-sm overflow-hidden relative">
+                {/* Video Background with fallback */}
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                  poster="/placeholder.svg?height=400&width=400"
+                  onError={(e) => {
+                    // Fallback if video fails to load
+                    e.currentTarget.style.display = "none"
+                    const fallback = e.currentTarget.nextElementSibling
+                    if (fallback) fallback.style.display = "block"
+                  }}
+                >
                   <source src="/8061751-uhd_2160_3840_25fps.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
                 </video>
+
+                {/* Fallback background image */}
+                <div
+                  className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 hidden"
+                  style={{ display: "none" }}
+                />
 
                 {/* Dark overlay for better text readability */}
                 <div className="absolute inset-0 bg-black/40" />
 
                 {/* Content overlay */}
-                <div className="relative z-10 h-full flex items-center justify-center p-8">
-                  <div className="text-center space-y-4">
+                <div className="relative z-10 h-full flex items-center justify-center p-6 md:p-8">
+                  <div className="text-center space-y-3 md:space-y-4">
                     <div className="relative">
                       <AnimatedIcon type="pulse" delay={1000}>
-                        <Lock className="h-16 w-16 mx-auto text-white" />
+                        <Lock className="h-12 w-12 md:h-16 md:w-16 mx-auto text-white" />
                       </AnimatedIcon>
                     </div>
-                    <h3 className="text-2xl font-bold text-white">Client Success Stories</h3>
-                    <p className="text-white/90">Real partnerships, real outcomes, real impact on people's lives</p>
+                    <h3 className="text-xl md:text-2xl font-bold text-white">Client Success Stories</h3>
+                    <p className="text-white/90 text-sm md:text-base">
+                      Real partnerships, real outcomes, real impact on people's lives
+                    </p>
                   </div>
                 </div>
               </div>
@@ -635,7 +685,7 @@ export default function LawFirmLanding() {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="relative z-10 py-24 px-6">
+      <section id="team" className="relative z-10 py-16 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-4 mb-16">
             <Badge variant="outline" className="border-blue-200 text-blue-700 bg-blue-50">
@@ -652,13 +702,13 @@ export default function LawFirmLanding() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
             {coreTeam.map((member, index) => (
               <div key={index}>
                 <Card className="bg-white border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                  <CardContent className="p-6 text-center">
+                  <CardContent className="p-4 md:p-6 text-center">
                     <div className="mb-4">
-                      <div className="relative w-32 h-32 mx-auto group">
+                      <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto group">
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
                             <Image
@@ -691,8 +741,8 @@ export default function LawFirmLanding() {
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                       </div>
                     </div>
-                    <div className="text-xl font-bold text-gray-900">{member.name}</div>
-                    <div className="text-gray-600">{member.title}</div>
+                    <div className="text-lg md:text-xl font-bold text-gray-900">{member.name}</div>
+                    <div className="text-gray-600 text-sm md:text-base">{member.title}</div>
                   </CardContent>
                 </Card>
               </div>
@@ -756,7 +806,7 @@ export default function LawFirmLanding() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 py-24 px-6 bg-gray-50">
+      <section className="relative z-10 py-16 md:py-24 px-4 md:px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold">
             <span className="bg-gradient-to-r from-gray-900 via-blue-700 to-purple-700 bg-clip-text text-transparent">
@@ -780,7 +830,7 @@ export default function LawFirmLanding() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-gray-200 py-12 px-6 bg-white">
+      <footer className="relative z-10 border-t border-gray-200 py-8 md:py-12 px-4 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4">
