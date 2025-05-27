@@ -8,7 +8,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import {
-  Scale,
   Brain,
   Shield,
   Zap,
@@ -388,11 +387,14 @@ export default function LawFirmLanding() {
       <header className="relative z-50 px-4 md:px-6 py-3 md:py-4 border-b border-gray-200 backdrop-blur-xl bg-white/80">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2 md:space-x-3">
-            <div className="relative">
-              <Scale className="h-6 w-6 md:h-8 md:w-8 text-gray-900" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse" />
-            </div>
-            <span className="text-lg md:text-xl font-bold tracking-tight text-gray-900">SKYEWALKER LAW</span>
+            <Image
+              src="/Skywaker logos/Skyewalker law logo-01.png"
+              alt="Skyewalker Law"
+              width={180}
+              height={40}
+              className="h-8 md:h-10 w-auto"
+              priority
+            />
           </div>
 
           <nav className="hidden lg:flex items-center space-x-8">
@@ -835,8 +837,13 @@ export default function LawFirmLanding() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Scale className="h-6 w-6 text-blue-600" />
-                <span className="font-bold text-gray-900">SKYEWALKER LAW</span>
+                <Image
+                  src="/Skywaker logos/Skyewalker law logo-01.png"
+                  alt="Skyewalker Law"
+                  width={200}
+                  height={45}
+                  className="h-10 md:h-12 w-auto"
+                />
               </div>
               <p className="text-gray-600 text-sm">Where legal excellence meets human connection.</p>
             </div>
