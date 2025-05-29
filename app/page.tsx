@@ -178,51 +178,56 @@ function CaseStudyCarousel() {
   return (
     <div className="relative">
       {/* Main Carousel */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 border border-gray-200">
-        <div className="p-6 md:p-8 lg:p-12">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50/80 to-purple-50/80 border border-gray-200/50 shadow-2xl backdrop-blur-sm">
+        <div className="p-12 md:p-16 lg:p-20">
+          <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-center">
             {/* Content */}
-            <div className="space-y-4 md:space-y-6">
-              <div className="space-y-2 md:space-y-3">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 md:gap-3">
-                  <Badge variant="outline" className="border-blue-200 text-blue-700 bg-blue-50 w-fit">
+            <div className="space-y-8 md:space-y-10">
+              <div className="space-y-6 md:space-y-8">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4 md:gap-6">
+                  <Badge
+                    variant="outline"
+                    className="border-blue-200 text-blue-700 bg-blue-50/80 w-fit px-4 py-2 text-sm font-medium"
+                  >
                     {currentCase.category}
                   </Badge>
-                  <span className="text-sm text-gray-500">{currentCase.year}</span>
+                  <span className="text-sm text-gray-500 font-medium">{currentCase.year}</span>
                 </div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">{currentCase.title}</h3>
-                <p className="text-base md:text-lg text-blue-600 font-medium">{currentCase.subtitle}</p>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                  {currentCase.title}
+                </h3>
+                <p className="text-xl md:text-2xl text-blue-600 font-semibold">{currentCase.subtitle}</p>
               </div>
 
-              <p className="text-gray-600 leading-relaxed text-base md:text-lg">{currentCase.description}</p>
+              <p className="text-gray-600 leading-relaxed text-lg md:text-xl">{currentCase.description}</p>
 
               {/* Key Details - Stack on mobile */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                <div className="flex items-center gap-3 text-gray-600">
-                  <MapPin className="h-5 w-5 text-blue-600" />
-                  <span>{currentCase.location}</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                <div className="flex items-center gap-4 text-gray-600">
+                  <MapPin className="h-6 w-6 text-blue-600" />
+                  <span className="text-lg">{currentCase.location}</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-600">
-                  <Calendar className="h-5 w-5 text-blue-600" />
-                  <span>{currentCase.duration}</span>
+                <div className="flex items-center gap-4 text-gray-600">
+                  <Calendar className="h-6 w-6 text-blue-600" />
+                  <span className="text-lg">{currentCase.duration}</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-600">
-                  <Building className="h-5 w-5 text-blue-600" />
-                  <span>{currentCase.client}</span>
+                <div className="flex items-center gap-4 text-gray-600">
+                  <Building className="h-6 w-6 text-blue-600" />
+                  <span className="text-lg">{currentCase.client}</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-600">
-                  <Award className="h-5 w-5 text-blue-600" />
-                  <span>{currentCase.outcome}</span>
+                <div className="flex items-center gap-4 text-gray-600">
+                  <Award className="h-6 w-6 text-blue-600" />
+                  <span className="text-lg">{currentCase.outcome}</span>
                 </div>
               </div>
 
               {/* Highlights */}
-              <div className="space-y-3">
-                <h4 className="font-semibold text-gray-900">Key Achievements:</h4>
-                <ul className="space-y-2">
+              <div className="space-y-6">
+                <h4 className="font-bold text-gray-900 text-xl">Key Achievements:</h4>
+                <ul className="space-y-4">
                   {currentCase.highlights.map((highlight, index) => (
-                    <li key={index} className="flex items-center gap-3 text-gray-600">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
+                    <li key={index} className="flex items-center gap-4 text-gray-600 text-lg">
+                      <div className="w-3 h-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full" />
                       <span>{highlight}</span>
                     </li>
                   ))}
@@ -232,20 +237,20 @@ function CaseStudyCarousel() {
 
             {/* Value Display - Responsive sizing */}
             <div className="text-center lg:text-right">
-              <div className="inline-block p-6 md:p-8 rounded-2xl bg-white border border-gray-200 shadow-sm w-full max-w-sm mx-auto lg:max-w-none">
-                <div className="space-y-3 md:space-y-4">
-                  <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <div className="inline-block p-10 md:p-12 rounded-3xl bg-white/90 border border-gray-200/50 shadow-xl backdrop-blur-sm w-full max-w-sm mx-auto lg:max-w-none">
+                <div className="space-y-6 md:space-y-8">
+                  <div className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     {currentCase.value}
                   </div>
-                  <div className="text-gray-600 font-medium text-sm md:text-base">Transaction Value</div>
+                  <div className="text-gray-600 font-semibold text-lg md:text-xl">Transaction Value</div>
                   <div className="flex justify-center lg:justify-end">
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                        <Star key={i} className="h-6 w-6 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
                   </div>
-                  <p className="text-sm text-gray-500 italic">"Exceptional service and expertise"</p>
+                  <p className="text-base text-gray-500 italic font-medium">"Exceptional service and expertise"</p>
                 </div>
               </div>
             </div>
@@ -254,32 +259,32 @@ function CaseStudyCarousel() {
       </div>
 
       {/* Navigation Controls */}
-      <div className="flex items-center justify-between mt-6">
-        <div className="flex items-center gap-4">
+      <div className="flex items-center justify-between mt-10">
+        <div className="flex items-center gap-6">
           <Button
             variant="outline"
-            size="sm"
+            size="lg"
             onClick={prevSlide}
-            className="border-gray-300 hover:bg-gray-900 hover:text-white hover:border-gray-900"
+            className="border-gray-300 hover:bg-gray-900 hover:text-white hover:border-gray-900 px-6 py-3"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-5 w-5" />
           </Button>
           <Button
             variant="outline"
-            size="sm"
+            size="lg"
             onClick={nextSlide}
-            className="border-gray-300 hover:bg-gray-900 hover:text-white hover:border-gray-900"
+            className="border-gray-300 hover:bg-gray-900 hover:text-white hover:border-gray-900 px-6 py-3"
           >
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-5 w-5" />
           </Button>
         </div>
         {/* Dots Indicator */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           {caseStudies.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
                 index === currentIndex
                   ? "bg-gradient-to-r from-blue-600 to-purple-600"
                   : "bg-gray-300 hover:bg-gray-400"
@@ -287,13 +292,13 @@ function CaseStudyCarousel() {
             />
           ))}
         </div>
-        <div className="w-20"></div> {/* Spacer for balance */}
+        <div className="w-32"></div> {/* Spacer for balance */}
       </div>
 
       {/* Progress Bar */}
-      <div className="mt-4 w-full bg-gray-200 rounded-full h-1">
+      <div className="mt-8 w-full bg-gray-200 rounded-full h-2">
         <div
-          className="bg-gradient-to-r from-blue-600 to-purple-600 h-1 rounded-full transition-all duration-300"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full transition-all duration-300"
           style={{ width: `${((currentIndex + 1) / caseStudies.length) * 100}%` }}
         />
       </div>
@@ -304,6 +309,7 @@ function CaseStudyCarousel() {
 export default function LawFirmLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
+  const [isConsultationFormOpen, setIsConsultationFormOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -313,32 +319,32 @@ export default function LawFirmLanding() {
 
   const tools = [
     {
-      icon: <Brain className="h-8 w-8" />,
-      animatedIcon: <Globe className="h-8 w-8" />,
+      icon: <Brain className="h-10 w-10" />,
+      animatedIcon: <Globe className="h-10 w-10" />,
       title: "Cross-Border M&A",
       description: "Building bridges between cultures and jurisdictions with genuine understanding",
       metric: "Global Reach",
       color: "from-blue-600 to-indigo-600",
     },
     {
-      icon: <Database className="h-8 w-8" />,
-      animatedIcon: <TrendingUp className="h-8 w-8" />,
+      icon: <Database className="h-10 w-10" />,
+      animatedIcon: <TrendingUp className="h-10 w-10" />,
       title: "Corporate Finance",
       description: "From startup dreams to £1.2B ventures - we're with you every step",
       metric: "£1.2B Ventures",
       color: "from-indigo-600 to-purple-600",
     },
     {
-      icon: <BarChart3 className="h-8 w-8" />,
-      animatedIcon: <Network className="h-8 w-8" />,
+      icon: <BarChart3 className="h-10 w-10" />,
+      animatedIcon: <Network className="h-10 w-10" />,
       title: "Distribution & Franchising",
       description: "Connecting passionate brands with global markets through human insight",
       metric: "Global Markets",
       color: "from-purple-600 to-pink-600",
     },
     {
-      icon: <Eye className="h-8 w-8" />,
-      animatedIcon: <Lightbulb className="h-8 w-8" />,
+      icon: <Eye className="h-10 w-10" />,
+      animatedIcon: <Lightbulb className="h-10 w-10" />,
       title: "Strategic Advisory",
       description: "Blue SKYE thinking that puts your vision at the center of every solution",
       metric: "Blue SKYE",
@@ -353,16 +359,16 @@ export default function LawFirmLanding() {
     { value: "UHNW", label: "Client Tier", sublabel: "Personal Touch" },
   ]
 
-  const coreTeam = [
-    { name: "Simon Walker", title: "Founding Partner, Chairman", image: "/Team photos/1.png" },
-    { name: "Susy Aryani", title: "Partner", image: "/Team photos/2.png" },
-    { name: "Damola Oluwatade", title: "CTO", image: "/Team photos/3.png" },
+  const allTeamMembers = [
+    { name: "Simon Walker", title: "Founding Partner, Chairman", image: "/Team photos/1.png", type: "core" },
+    { name: "Susy Aryani", title: "Partner", image: "/Team photos/2.png", type: "core" },
+    { name: "Damola Oluwatade", title: "CTO", image: "/Team photos/3.png", type: "core" },
+    { name: "James Cadbury", title: "Senior Advisor", image: "/Team photos/4.png", type: "advisory" },
+    { name: "Dr Mansour Malik", title: "Senior Advisor", image: "/Team photos/5.png", type: "advisory" },
   ]
 
-  const advisoryPanel = [
-    { name: "James Cadbury", title: "Senior Advisor", image: "/Team photos/4.png" },
-    { name: "Dr Mansour Malik", title: "Senior Advisor", image: "/Team photos/5.png" },
-  ]
+  const coreTeam = allTeamMembers.filter((member) => member.type === "core")
+  const advisoryPanel = allTeamMembers.filter((member) => member.type === "advisory")
 
   return (
     <div className="min-h-screen bg-white text-gray-900 overflow-hidden">
@@ -384,68 +390,83 @@ export default function LawFirmLanding() {
       </div>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-3 md:py-4 border-b border-gray-200 backdrop-blur-xl bg-white/95">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2 md:space-x-3">
+      <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-4 md:py-6 border-b border-gray-200/50 backdrop-blur-xl bg-white/95 shadow-sm">
+        <div className="max-w-8xl mx-auto flex items-center justify-between">
+          <div className="flex items-center space-x-3 md:space-x-4">
             <Image
               src="/Skywaker logos/Skyewalker law logo-01.png"
               alt="Skyewalker Law"
-              width={180}
-              height={40}
-              className="h-10 md:h-12 w-auto"
+              width={200}
+              height={50}
+              className="h-12 md:h-14 w-auto"
               priority
             />
           </div>
 
-          <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="#services" className="text-gray-600 hover:text-gray-900 transition-colors">
+          <nav className="hidden lg:flex items-center space-x-12">
+            <Link href="/" className="text-gray-700 hover:text-gray-900 transition-colors font-medium text-lg">
+              Home
+            </Link>
+            <Link href="/services" className="text-gray-700 hover:text-gray-900 transition-colors font-medium text-lg">
               Services
             </Link>
-            <Link href="#tools" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="#expertise" className="text-gray-700 hover:text-gray-900 transition-colors font-medium text-lg">
               Expertise
             </Link>
-            <Link href="#results" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="#results" className="text-gray-700 hover:text-gray-900 transition-colors font-medium text-lg">
               Results
             </Link>
-            <Link href="#team" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="#team" className="text-gray-700 hover:text-gray-900 transition-colors font-medium text-lg">
               Team
-            </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Contact
             </Link>
           </nav>
 
-          <div className="flex items-center space-x-2 md:space-x-4">
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-sm md:text-base px-3 md:px-4 py-2 hidden sm:inline-flex">
-              Start Our Partnership
+          <div className="flex items-center space-x-4 md:space-x-6">
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-6 md:px-8 py-3 md:py-4 hidden sm:inline-flex font-medium shadow-lg">
+              Begin Partnership
             </Button>
             <button className="lg:hidden text-gray-900" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
+              {isMenuOpen ? <X className="h-6 w-6 md:h-7 md:w-7" /> : <Menu className="h-6 w-6 md:h-7 md:w-7" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg">
-            <nav className="px-4 py-4 space-y-4">
-              <Link href="#services" className="block text-gray-600 hover:text-gray-900 transition-colors py-2">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-xl">
+            <nav className="px-6 py-8 space-y-6">
+              <Link
+                href="/"
+                className="block text-gray-700 hover:text-gray-900 transition-colors py-3 text-lg font-medium"
+              >
+                Home
+              </Link>
+              <Link
+                href="/services"
+                className="block text-gray-700 hover:text-gray-900 transition-colors py-3 text-lg font-medium"
+              >
                 Services
               </Link>
-              <Link href="#tools" className="block text-gray-600 hover:text-gray-900 transition-colors py-2">
+              <Link
+                href="#expertise"
+                className="block text-gray-700 hover:text-gray-900 transition-colors py-3 text-lg font-medium"
+              >
                 Expertise
               </Link>
-              <Link href="#results" className="block text-gray-600 hover:text-gray-900 transition-colors py-2">
+              <Link
+                href="#results"
+                className="block text-gray-700 hover:text-gray-900 transition-colors py-3 text-lg font-medium"
+              >
                 Results
               </Link>
-              <Link href="#team" className="block text-gray-600 hover:text-gray-900 transition-colors py-2">
+              <Link
+                href="#team"
+                className="block text-gray-700 hover:text-gray-900 transition-colors py-3 text-lg font-medium"
+              >
                 Team
               </Link>
-              <Link href="#contact" className="block text-gray-600 hover:text-gray-900 transition-colors py-2">
-                Contact
-              </Link>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full mt-4">
-                Start Our Partnership
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full mt-6 py-4 text-lg font-medium">
+                Begin Partnership
               </Button>
             </nav>
           </div>
@@ -453,56 +474,60 @@ export default function LawFirmLanding() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-24 md:pt-28 pb-24 md:pb-32 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-6 md:space-y-8">
-            <div className="space-y-4">
-              <Badge variant="outline" className="border-blue-200 text-blue-700 bg-blue-50">
-                <Zap className="h-3 w-3 mr-1" />
+      <section className="relative z-10 pt-32 md:pt-40 pb-32 md:pb-40 px-6 md:px-8">
+        <div className="max-w-8xl mx-auto">
+          <div className="text-center space-y-12 md:space-y-16">
+            <div className="space-y-8">
+              <Badge
+                variant="outline"
+                className="border-blue-200 text-blue-700 bg-blue-50/80 px-6 py-3 text-lg font-semibold"
+              >
+                <Zap className="h-4 w-4 mr-2" />
                 BLUE SKYE THINKING
               </Badge>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 bg-clip-text text-transparent">
-                  With Us, Law Meets
+                  Where Law Meets
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Human Connection
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+              <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-6 font-medium">
                 We don't just practice law—we build lasting partnerships. Behind every complex transaction is a human
                 story, and our blue SKYE thinking starts with understanding yours.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center px-6">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xl px-10 md:px-12 py-6 md:py-8 w-full sm:w-auto font-semibold shadow-xl"
+                onClick={() => setIsConsultationFormOpen(true)}
               >
-                Start Our Partnership
-                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                Begin Partnership
+                <ArrowRight className="ml-3 h-5 w-5 md:h-6 md:w-6" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 hover:bg-gray-900 hover:text-white hover:border-gray-900 text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full sm:w-auto"
+                className="border-gray-300 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 hover:bg-gray-900 hover:text-white hover:border-gray-900 text-xl px-10 md:px-12 py-6 md:py-8 w-full sm:w-auto font-semibold"
               >
-                Hear Client Stories
+                Client Stories
               </Button>
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pt-12 md:pt-16 px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pt-20 md:pt-24 px-6">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center space-y-1 md:space-y-2 group cursor-pointer">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                <div key={index} className="text-center space-y-3 md:space-y-4 group cursor-pointer">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                     {stat.value}
                   </div>
-                  <div className="text-gray-900 font-medium text-sm md:text-base">{stat.label}</div>
-                  <div className="text-xs md:text-sm text-gray-500">{stat.sublabel}</div>
+                  <div className="text-gray-900 font-semibold text-lg md:text-xl">{stat.label}</div>
+                  <div className="text-sm md:text-base text-gray-500 font-medium">{stat.sublabel}</div>
                 </div>
               ))}
             </div>
@@ -511,19 +536,22 @@ export default function LawFirmLanding() {
       </section>
 
       {/* Case Studies Section */}
-      <section id="results" className="relative z-10 py-16 md:py-24 px-4 md:px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-16">
-            <Badge variant="outline" className="border-purple-200 text-purple-700 bg-purple-50">
-              <Award className="h-3 w-3 mr-1" />
-              Client Success Stories
+      <section id="results" className="relative z-10 py-24 md:py-32 px-6 md:px-8 bg-gray-50/50">
+        <div className="max-w-8xl mx-auto">
+          <div className="text-center space-y-8 mb-24">
+            <Badge
+              variant="outline"
+              className="border-purple-200 text-purple-700 bg-purple-50/80 px-6 py-3 text-lg font-semibold"
+            >
+              <Award className="h-4 w-4 mr-2" />
+              CLIENT SUCCESS STORIES
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-5xl md:text-6xl font-bold">
               <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                 Proven Results
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-medium">
               Real partnerships, transformative outcomes. See how our blue SKYE approach has delivered exceptional
               results for clients across the globe.
             </p>
@@ -534,34 +562,39 @@ export default function LawFirmLanding() {
       </section>
 
       {/* Tech Arsenal Section */}
-      <section id="tools" className="relative z-10 py-16 md:py-24 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-16">
-            <Badge variant="outline" className="border-indigo-200 text-indigo-700 bg-indigo-50">
-              <Shield className="h-3 w-3 mr-1" />
-              Areas of Expertise
+      <section id="expertise" className="relative z-10 py-24 md:py-32 px-6 md:px-8">
+        <div className="max-w-8xl mx-auto">
+          <div className="text-center space-y-8 mb-24">
+            <Badge
+              variant="outline"
+              className="border-indigo-200 text-indigo-700 bg-indigo-50/80 px-6 py-3 text-lg font-semibold"
+            >
+              <Shield className="h-4 w-4 mr-2" />
+              AREAS OF EXPERTISE
             </Badge>
 
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-5xl md:text-6xl font-bold">
               <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                 Our Expertise
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-medium">
               Every client relationship begins with listening. We combine deep technical knowledge with genuine care for
               your success.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-12">
             {tools.map((tool, index) => (
               <Card
                 key={index}
-                className="bg-white border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group"
+                className="bg-white/80 backdrop-blur-sm border-gray-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 group"
               >
-                <CardContent className="p-8">
-                  <div className="flex items-start space-x-4">
-                    <div className={`p-3 rounded-xl bg-gradient-to-r ${tool.color} relative overflow-hidden`}>
+                <CardContent className="p-12">
+                  <div className="flex items-start space-x-8">
+                    <div
+                      className={`p-5 rounded-2xl bg-gradient-to-r ${tool.color} relative overflow-hidden shadow-lg`}
+                    >
                       <div className="relative z-10 group-hover:scale-0 transition-transform duration-300 text-white">
                         {tool.icon}
                       </div>
@@ -571,16 +604,19 @@ export default function LawFirmLanding() {
                         </AnimatedIcon>
                       </div>
                     </div>
-                    <div className="flex-1 space-y-3">
+                    <div className="flex-1 space-y-6">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-xl font-bold text-gray-900">{tool.title}</h3>
-                        <Badge variant="outline" className="border-gray-300 text-gray-600">
+                        <h3 className="text-2xl font-bold text-gray-900">{tool.title}</h3>
+                        <Badge variant="outline" className="border-gray-300 text-gray-600 px-4 py-2 font-medium">
                           {tool.metric}
                         </Badge>
                       </div>
-                      <p className="text-gray-600 leading-relaxed">{tool.description}</p>
-                      <Button variant="ghost" className="text-blue-600 hover:text-blue-700 p-0 h-auto">
-                        Learn More <ChevronRight className="ml-1 h-4 w-4" />
+                      <p className="text-gray-600 leading-relaxed text-lg">{tool.description}</p>
+                      <Button
+                        variant="ghost"
+                        className="text-blue-600 hover:text-blue-700 p-0 h-auto text-lg font-medium"
+                      >
+                        Learn More <ChevronRight className="ml-2 h-5 w-5" />
                       </Button>
                     </div>
                   </div>
@@ -592,27 +628,30 @@ export default function LawFirmLanding() {
       </section>
 
       {/* Services Preview */}
-      <section id="services" className="relative z-10 py-12 md:py-24 px-4 md:px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div className="space-y-6 md:space-y-8 order-2 lg:order-1">
-              <div className="space-y-4">
-                <Badge variant="outline" className="border-emerald-200 text-emerald-700 bg-emerald-50">
-                  <Gavel className="h-3 w-3 mr-1" />
-                  Elite Legal Services
+      <section id="services" className="relative z-10 py-24 md:py-32 px-6 md:px-8 bg-gray-50/50">
+        <div className="max-w-8xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div className="space-y-10 md:space-y-12 order-2 lg:order-1">
+              <div className="space-y-8">
+                <Badge
+                  variant="outline"
+                  className="border-emerald-200 text-emerald-700 bg-emerald-50/80 px-6 py-3 text-lg font-semibold"
+                >
+                  <Gavel className="h-4 w-4 mr-2" />
+                  ELITE LEGAL SERVICES
                 </Badge>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
                   <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
                     Redefining Legal Excellence
                   </span>
                 </h2>
-                <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl md:text-2xl text-gray-600 leading-relaxed font-medium">
                   We handle the impossible cases others won't touch. Our approach combines traditional legal mastery
                   with genuine understanding of what matters most to you.
                 </p>
               </div>
 
-              <div className="space-y-3 md:space-y-4">
+              <div className="space-y-6 md:space-y-8">
                 {[
                   "Cross-Border M&A & Corporate Finance",
                   "Distribution, Franchising & Licensing",
@@ -620,9 +659,9 @@ export default function LawFirmLanding() {
                   "UHNW Individual & Corporate Advisory",
                 ].map((service, index) => (
                   <AnimatedIcon key={index} delay={index * 100}>
-                    <div className="flex items-center space-x-3 text-gray-600 group cursor-pointer">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full group-hover:scale-150 transition-transform duration-200 flex-shrink-0" />
-                      <span className="group-hover:text-gray-900 transition-colors duration-200 text-sm md:text-base">
+                    <div className="flex items-center space-x-6 text-gray-600 group cursor-pointer">
+                      <div className="w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full group-hover:scale-150 transition-transform duration-200 flex-shrink-0" />
+                      <span className="group-hover:text-gray-900 transition-colors duration-200 text-lg md:text-xl font-medium">
                         {service}
                       </span>
                     </div>
@@ -630,14 +669,16 @@ export default function LawFirmLanding() {
                 ))}
               </div>
 
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full sm:w-auto">
-                Explore All Services
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link href="/services">
+                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full sm:w-auto text-xl px-10 py-6 font-semibold shadow-xl">
+                  Explore All Services
+                  <ArrowRight className="ml-3 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
 
             <div className="relative order-1 lg:order-2">
-              <div className="aspect-square w-full max-w-md mx-auto lg:max-w-none rounded-2xl border border-gray-200 shadow-sm overflow-hidden relative">
+              <div className="aspect-square w-full max-w-lg mx-auto lg:max-w-none rounded-3xl border border-gray-200/50 shadow-2xl overflow-hidden relative">
                 {/* Video Background with fallback */}
                 <video
                   autoPlay
@@ -667,15 +708,15 @@ export default function LawFirmLanding() {
                 <div className="absolute inset-0 bg-black/40" />
 
                 {/* Content overlay */}
-                <div className="relative z-10 h-full flex items-center justify-center p-6 md:p-8">
-                  <div className="text-center space-y-3 md:space-y-4">
+                <div className="relative z-10 h-full flex items-center justify-center p-10 md:p-12">
+                  <div className="text-center space-y-6 md:space-y-8">
                     <div className="relative">
                       <AnimatedIcon type="pulse" delay={1000}>
-                        <Lock className="h-12 w-12 md:h-16 md:w-16 mx-auto text-white" />
+                        <Lock className="h-16 w-16 md:h-20 md:w-20 mx-auto text-white" />
                       </AnimatedIcon>
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white">Client Success Stories</h3>
-                    <p className="text-white/90 text-sm md:text-base">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">Client Success Stories</h3>
+                    <p className="text-white/90 text-lg md:text-xl font-medium">
                       Real partnerships, real outcomes, real impact on people's lives
                     </p>
                   </div>
@@ -687,38 +728,66 @@ export default function LawFirmLanding() {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="relative z-10 py-16 md:py-24 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-16">
-            <Badge variant="outline" className="border-blue-200 text-blue-700 bg-blue-50">
-              <Users className="h-3 w-3 mr-1" />
-              Our Team
+      <section id="team" className="relative z-10 py-24 md:py-32 px-6 md:px-8">
+        <div className="max-w-8xl mx-auto">
+          <div className="text-center space-y-8 mb-24">
+            <Badge
+              variant="outline"
+              className="border-blue-200 text-blue-700 bg-blue-50/80 px-6 py-3 text-lg font-semibold"
+            >
+              <Users className="h-4 w-4 mr-2" />
+              OUR TEAM
             </Badge>
 
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-5xl md:text-6xl font-bold">
               <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">The Team</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-medium">
               Our strength lies not just in our expertise, but in our ability to connect with clients and understand
               what truly matters to them.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-            {coreTeam.map((member, index) => (
-              <div key={index}>
-                <Card className="bg-white border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                  <CardContent className="p-4 md:p-6 text-center">
-                    <div className="mb-4">
-                      <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto group">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+          {/* Core Team */}
+          <div className="mb-20">
+            <div className="text-center mb-16">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Leadership Team</h3>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-12 md:gap-16">
+              {coreTeam.map((member, index) => (
+                <div key={index}>
+                  <Card className="bg-white/80 backdrop-blur-sm border-gray-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 group">
+                    <CardContent className="p-8 md:p-10 text-center">
+                      <div className="mb-8">
+                        <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto group">
+                          {/* Pulsing glow effect */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 rounded-full blur-lg opacity-40 animate-pulse"></div>
+
+                          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                              <Image
+                                src={member.image || "/placeholder.svg"}
+                                alt={member.name}
+                                width={160}
+                                height={160}
+                                className="rounded-full object-cover"
+                                style={{
+                                  objectPosition: "center top",
+                                  objectFit: "cover",
+                                }}
+                              />
+                            </div>
+                          </div>
+                          {/* Normal border when not hovering */}
+                          <div className="absolute inset-0 border-2 border-gray-200 rounded-full group-hover:opacity-0 transition-opacity duration-300">
                             <Image
                               src={member.image || "/placeholder.svg"}
                               alt={member.name}
-                              width={120}
-                              height={120}
-                              className="rounded-full object-cover"
+                              width={160}
+                              height={160}
+                              className="rounded-full object-cover w-full h-full"
                               style={{
                                 objectPosition: "center top",
                                 objectFit: "cover",
@@ -726,53 +795,56 @@ export default function LawFirmLanding() {
                             />
                           </div>
                         </div>
-                        {/* Normal border when not hovering */}
-                        <div className="absolute inset-0 border-2 border-gray-200 rounded-full group-hover:opacity-0 transition-opacity duration-300">
-                          <Image
-                            src={member.image || "/placeholder.svg"}
-                            alt={member.name}
-                            width={120}
-                            height={120}
-                            className="rounded-full object-cover w-full h-full"
-                            style={{
-                              objectPosition: "center top",
-                              objectFit: "cover",
-                            }}
-                          />
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                       </div>
-                    </div>
-                    <div className="text-lg md:text-xl font-bold text-gray-900">{member.name}</div>
-                    <div className="text-gray-600 text-sm md:text-base">{member.title}</div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
+                      <div className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{member.name}</div>
+                      <div className="text-gray-600 text-lg md:text-xl font-medium">{member.title}</div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="text-center space-y-4 mb-8">
-            <Badge variant="outline" className="border-orange-200 text-orange-700 bg-orange-50">
-              <Users className="h-3 w-3 mr-1" />
-              Advisory Panel
-            </Badge>
-          </div>
+          {/* Advisory Panel */}
+          <div>
+            <div className="text-center mb-16">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Advisory Panel</h3>
+              <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto rounded-full"></div>
+            </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            {advisoryPanel.map((member, index) => (
-              <div key={index}>
-                <Card className="bg-white border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group">
-                  <CardContent className="p-6 text-center">
-                    <div className="mb-4">
-                      <div className="relative w-32 h-32 mx-auto group">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-16 max-w-4xl mx-auto">
+              {advisoryPanel.map((member, index) => (
+                <div key={index}>
+                  <Card className="bg-white/80 backdrop-blur-sm border-gray-200/50 shadow-xl hover:shadow-2xl transition-all duration-500 group">
+                    <CardContent className="p-8 md:p-10 text-center">
+                      <div className="mb-8">
+                        <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto group">
+                          {/* Pulsing glow effect */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 rounded-full blur-lg opacity-40 animate-pulse"></div>
+
+                          <div className="absolute inset-0 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                              <Image
+                                src={member.image || "/placeholder.svg"}
+                                alt={member.name}
+                                width={160}
+                                height={160}
+                                className="rounded-full object-cover"
+                                style={{
+                                  objectPosition: "center top",
+                                  objectFit: "cover",
+                                }}
+                              />
+                            </div>
+                          </div>
+                          {/* Normal border when not hovering */}
+                          <div className="absolute inset-0 border-2 border-gray-200 rounded-full group-hover:opacity-0 transition-opacity duration-300">
                             <Image
                               src={member.image || "/placeholder.svg"}
                               alt={member.name}
-                              width={120}
-                              height={120}
-                              className="rounded-full object-cover"
+                              width={160}
+                              height={160}
+                              className="rounded-full object-cover w-full h-full"
                               style={{
                                 objectPosition: "center top",
                                 objectFit: "cover",
@@ -780,50 +852,36 @@ export default function LawFirmLanding() {
                             />
                           </div>
                         </div>
-                        {/* Normal border when not hovering */}
-                        <div className="absolute inset-0 border-2 border-gray-200 rounded-full group-hover:opacity-0 transition-opacity duration-300">
-                          <Image
-                            src={member.image || "/placeholder.svg"}
-                            alt={member.name}
-                            width={120}
-                            height={120}
-                            className="rounded-full object-cover w-full h-full"
-                            style={{
-                              objectPosition: "center top",
-                              objectFit: "cover",
-                            }}
-                          />
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                       </div>
-                    </div>
-                    <div className="text-xl font-bold text-gray-900">{member.name}</div>
-                    <div className="text-gray-600">{member.title}</div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
+                      <div className="text-xl md:text-2xl font-bold text-gray-900 mb-2">{member.name}</div>
+                      <div className="text-gray-600 text-lg md:text-xl font-medium">{member.title}</div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 py-16 md:py-24 px-4 md:px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold">
+      <section className="relative z-10 py-24 md:py-32 px-6 md:px-8 bg-gray-50/50">
+        <div className="max-w-6xl mx-auto text-center space-y-12">
+          <h2 className="text-5xl md:text-6xl font-bold">
             <span className="bg-gradient-to-r from-gray-900 via-blue-700 to-purple-700 bg-clip-text text-transparent">
               Let's Start a Conversation
             </span>
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed font-medium">
             Behind every successful legal outcome is a strong partnership built on trust, understanding, and shared
             vision. We'd love to learn about your challenges and explore how our blue SKYE approach can help you achieve
             your goals.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 py-6"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xl px-12 py-8 font-semibold shadow-xl"
+              onClick={() => setIsConsultationFormOpen(true)}
             >
               Schedule Consultation
             </Button>
@@ -831,25 +889,123 @@ export default function LawFirmLanding() {
         </div>
       </section>
 
+      {/* Consultation Form Modal */}
+      {isConsultationFormOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/60 backdrop-blur-md">
+          <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto border border-gray-200/50">
+            <div className="p-8 border-b border-gray-200/50">
+              <div className="flex items-center justify-between">
+                <h3 className="text-2xl font-bold text-gray-900">Schedule Consultation</h3>
+                <button
+                  onClick={() => setIsConsultationFormOpen(false)}
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <X className="h-7 w-7" />
+                </button>
+              </div>
+            </div>
+            <form className="p-8 space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-lg font-semibold text-gray-700 mb-3">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg"
+                  placeholder="Your full name"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-lg font-semibold text-gray-700 mb-3">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="company" className="block text-lg font-semibold text-gray-700 mb-3">
+                  Company/Organization
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg"
+                  placeholder="Your company name"
+                />
+              </div>
+              <div>
+                <label htmlFor="service" className="block text-lg font-semibold text-gray-700 mb-3">
+                  Service Interest
+                </label>
+                <select
+                  id="service"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg"
+                >
+                  <option value="">Select a service</option>
+                  <option value="cross-border-ma">Cross-Border M&A</option>
+                  <option value="corporate-finance">Corporate Finance</option>
+                  <option value="distribution-franchising">Distribution & Franchising</option>
+                  <option value="joint-ventures">Joint Ventures</option>
+                  <option value="uhnw-advisory">UHNW Advisory</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-lg font-semibold text-gray-700 mb-3">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg"
+                  placeholder="Tell us about your legal needs..."
+                ></textarea>
+              </div>
+              <div className="flex gap-4 pt-6">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="flex-1 py-4 text-lg font-medium"
+                  onClick={() => setIsConsultationFormOpen(false)}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  type="submit"
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 text-lg font-medium"
+                >
+                  Send Request
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
       {/* Footer */}
-      <footer className="relative z-10 border-t border-gray-200 py-8 md:py-12 px-4 md:px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
+      <footer className="relative z-10 border-t border-gray-200/50 py-16 md:py-20 px-6 md:px-8 bg-white">
+        <div className="max-w-8xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4">
                 <Image
                   src="/Skywaker logos/Skyewalker law logo-01.png"
                   alt="Skyewalker Law"
-                  width={200}
-                  height={45}
-                  className="h-12 md:h-14 w-auto"
+                  width={220}
+                  height={55}
+                  className="h-14 md:h-16 w-auto"
                 />
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h4 className="font-semibold text-gray-900">Services</h4>
-              <div className="space-y-2 text-sm text-gray-600">
+            <div className="space-y-6">
+              <h4 className="font-bold text-gray-900 text-xl">Services</h4>
+              <div className="space-y-4 text-lg text-gray-600">
                 <div>Cross-Border M&A</div>
                 <div>Distribution & Franchising</div>
                 <div>Joint Ventures</div>
@@ -857,9 +1013,9 @@ export default function LawFirmLanding() {
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h4 className="font-semibold text-gray-900">Expertise</h4>
-              <div className="space-y-2 text-sm text-gray-600">
+            <div className="space-y-6">
+              <h4 className="font-bold text-gray-900 text-xl">Expertise</h4>
+              <div className="space-y-4 text-lg text-gray-600">
                 <div>Global Transactions</div>
                 <div>Corporate Finance</div>
                 <div>Strategic Partnerships</div>
@@ -868,7 +1024,7 @@ export default function LawFirmLanding() {
             </div>
           </div>
 
-          <div className="border-t border-gray-200 mt-12 pt-8 text-center text-sm text-gray-500">
+          <div className="border-t border-gray-200/50 mt-16 pt-12 text-center text-lg text-gray-500 font-medium">
             <p>&copy; 2025 Skyewalker Law. All rights reserved.</p>
           </div>
         </div>
